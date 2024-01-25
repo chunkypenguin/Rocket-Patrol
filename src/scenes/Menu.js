@@ -28,7 +28,7 @@ class Menu extends Phaser.Scene{ //Menu class becomes a child of Phaser.Scene
             key: 'explode',
             frames: this.anims.generateFrameNumbers('explosion', {
                 start: 0, end: 8, first: 0}),
-                frameRrate: 30
+                frameRate: 30
         })
 
         let menuConfig = {
@@ -61,9 +61,10 @@ class Menu extends Phaser.Scene{ //Menu class becomes a child of Phaser.Scene
 
     update(){
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)){
-            //easy mod
+            //easy mode
             game.settings = {
                 spaceshipSpeed: 3,
+                speedUpSpeed: 4,
                 gameTimer: 60000
             }
             this.sound.play('sfx-select')
@@ -73,6 +74,7 @@ class Menu extends Phaser.Scene{ //Menu class becomes a child of Phaser.Scene
             //hard mode
             game.settings = {
                 spaceshipSpeed: 4,
+                speedUpSpeed: 5,
                 gameTimer: 45000
             }
             this.sound.play('sfx-select')
